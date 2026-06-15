@@ -1,0 +1,31 @@
+@model IEnumerable<Sach>
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+}
+
+<h2>Danh sách sách</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm sách</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tên sách</th>
+            <th>Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sach in Model)
+        {
+            <tr>
+                <td>@sach.Id</td>
+                <td>@sach.Ten</td>
+                <td>@sach.Gia.ToString("N0")</td>
+            </tr>
+        }
+    </tbody>
+</table>
