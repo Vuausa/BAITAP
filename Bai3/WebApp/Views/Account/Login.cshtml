@@ -1,0 +1,28 @@
+@model WebApp.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Đăng nhập</h2>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    var alertClass = Model.Message == "Login success" ? "alert-success" : "alert-danger";
+    <div class="alert @alertClass" role="alert">
+        @Model.Message
+    </div>
+}
+
+<form asp-action="Login" method="post">
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label">Username</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<p class="mt-3 text-muted">Gợi ý: admin / 123</p>
