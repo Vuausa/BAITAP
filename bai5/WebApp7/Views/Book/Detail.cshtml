@@ -1,0 +1,19 @@
+@model Book
+
+@{
+    ViewData["Title"] = "Chi tiet sach";
+}
+
+<h2 class="mb-4">Chi tiet sach</h2>
+
+<div class="card" style="width: 24rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">
+            <strong>Id:</strong> @Model.Id<br />
+            <strong>Ten sach:</strong> @Model.Title<br />
+            <strong>Gia:</strong> <span class="text-danger fw-bold">@Model.Price.ToString("N0") VND</span>
+        </p>
+        <a asp-action="Index" class="btn btn-secondary">Quay lai</a>
+    </div>
+</div>

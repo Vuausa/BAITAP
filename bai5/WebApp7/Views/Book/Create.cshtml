@@ -1,0 +1,28 @@
+@model Book
+
+@{
+    ViewData["Title"] = "Them sach moi";
+}
+
+<h2 class="mb-4">Them sach moi</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" placeholder="Nhap ten sach" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" placeholder="Nhap gia sach" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Luu</button>
+    <a asp-action="Index" class="btn btn-secondary">Huy</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
