@@ -1,0 +1,36 @@
+@model List<WebApp8.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm sản phẩm</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Hình ảnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("N0") đ</td>
+                <td>
+                    @foreach (var img in product.ImagePaths)
+                    {
+                        <img src="@img" alt="@product.Name" style="width:100px; height:auto; margin-right:5px;" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

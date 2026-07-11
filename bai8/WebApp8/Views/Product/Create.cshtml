@@ -1,0 +1,38 @@
+@model WebApp8.Models.Product
+
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+
+<h1>Thêm sản phẩm</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Tên sản phẩm</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Giá</label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Hình ảnh (jpg/png)</label>
+        <input type="file" name="images" class="form-control" multiple accept=".jpg,.jpeg,.png" />
+        <span asp-validation-for="ImagePaths" class="text-danger"></span>
+        @if (ViewData.ModelState["images"]?.Errors.Count > 0)
+        {
+            <span class="text-danger">@ViewData.ModelState["images"]?.Errors[0]?.ErrorMessage</span>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
