@@ -1,0 +1,95 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+}
+
+.site-title {
+  font-size: 1.75rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.site-subtitle {
+  margin: 0.25rem 0 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  background-color: #2d5a87;
+  padding: 0.5rem 1rem;
+}
+
+.site-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+}
+
+.site-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white !important;
+}
+
+.main-content {
+  margin-top: 1.5rem;
+  min-height: calc(100vh - 280px);
+}
+
+.site-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.hero-section {
+  padding: 2rem 0;
+}
+
+.feature-card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

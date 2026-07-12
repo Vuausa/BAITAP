@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="text-center hero-section">
+    <h1 class="display-4">Chào mừng đến với hệ thống</h1>
+    <h2 class="text-primary">Quản lý sinh viên</h2>
+    <p class="lead mt-3">
+        Ứng dụng web ASP.NET MVC với chức năng CRUD hoàn chỉnh.
+        Dữ liệu được lưu trữ trong bộ nhớ (List giả lập).
+    </p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Danh sách</h5>
+                <p class="card-text">Xem danh sách sinh viên, tìm kiếm và sắp xếp dữ liệu.</p>
+                <a asp-controller="Student" asp-action="Index" class="btn btn-primary">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Thêm mới</h5>
+                <p class="card-text">Thêm sinh viên mới với validation dữ liệu đầu vào.</p>
+                <a asp-controller="Student" asp-action="Create" class="btn btn-success">Thêm sinh viên</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Chức năng CRUD</h5>
+                <p class="card-text">Xem chi tiết, sửa, xóa sinh viên với xác nhận trước khi xóa.</p>
+                <a asp-controller="Student" asp-action="Index" class="btn btn-info text-white">Bắt đầu</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log("Trang chủ đã được tải");
+    </script>
+}
